@@ -12,18 +12,12 @@ p1 = 0
 p2 = 0
 
 def find_xmas(r, c, dr, dc):
-    positions = [
-        (r, c),
-        (r + dr, c + dc),
-        (r + 2 * dr, c + 2 * dc),
-        (r + 3 * dr, c + 3 * dc)
-    ]
     for i in range(4):
-        r, c = positions[i]
+        nr, nc = r + i * dr, c + i * dc
         if not (
-            r >= 0 and r < R and
-            c >= 0 and c < C and
-            word_search[r][c] == chars[i]
+            nr >= 0 and nr < R and
+            nc >= 0 and nc < C and
+            word_search[nr][nc] == chars[i]
         ):
             return False
     return True
