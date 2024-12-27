@@ -6,7 +6,6 @@ D = open(infile).read().strip()
 word_search = D.split('\n')
 R = len(word_search)
 C = len(word_search[0])
-chars = ["X", "M", "A", "S"]
 directions = [(1, 0), (0, 1), (-1, 0), (0, -1), (1, 1), (1, -1), (-1, 1), (-1, -1)]
 p1 = 0
 p2 = 0
@@ -17,7 +16,7 @@ def find_xmas(r, c, dr, dc):
         if not (
             nr >= 0 and nr < R and
             nc >= 0 and nc < C and
-            word_search[nr][nc] == chars[i]
+            word_search[nr][nc] == ["X", "M", "A", "S"][i]
         ):
             return False
     return True
@@ -32,7 +31,6 @@ def find_x_mas(r, c):
         (word_search[r - 1][c + 1] == "M" and word_search[r + 1][c - 1] == "S") or
         (word_search[r + 1][c - 1] == "M" and word_search[r - 1][c + 1] == "S")
     )
-    
 
 for r in range(R):
     for c in range(C):
