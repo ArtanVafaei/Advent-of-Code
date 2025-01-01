@@ -68,5 +68,7 @@ for i, id_number in enumerate(blocks2):
     if id_number != ".":
         p2 += i * id_number
 
+print("".join(str(x) for x in blocks))
 print(p1)
+print("".join(str(x) for x in blocks2))
 print(p2)
