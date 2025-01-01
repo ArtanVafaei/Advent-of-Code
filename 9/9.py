@@ -43,7 +43,6 @@ for i, id_number in enumerate(blocks):
 
 for id_number in sorted(id_to_idx_length.keys(), reverse=True):
     l = 0
-
     while l < id_to_idx_length[id_number][0]:
         if blocks2[l] is not None:
             l += 1
@@ -59,9 +58,9 @@ for id_number in sorted(id_to_idx_length.keys(), reverse=True):
             blocks2[l:l + length] = [id_number] * length
             blocks2[idx:idx + length] = [None] * length
             break
-        else:
-            l += 1
-            r -= 1
+
+        l += 1
+        r -= 1
 
 p2 = 0
 
